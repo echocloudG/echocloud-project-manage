@@ -1,0 +1,21 @@
+FROM centos:7
+
+# 安装chrome
+ADD google-chrome-stable.rpm /usr/local
+RUN yum -y localinstall /usr/local/google-chrome-stable.rpm
+
+# 安装chromedriver
+ADD chromedriver.tar.gz /usr/bin
+
+#RUN yum groups mark convert
+# 安装中文字体
+RUN yum -y groupinstall "fonts"
+
+# 安装JDK
+ADD jdk-8u212-linux-x64.tar.gz /usr/local/
+
+ENV JAVA_HOME=/usr/local/jdk1.8.0_212
+ENV PATH=$PATH:$JAVA_HOME/bin
+ENV CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+WORKDIR /home/saimo/
