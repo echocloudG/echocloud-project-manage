@@ -20,7 +20,7 @@
 
     <name>echocloud</name>
 
-    <description>Saimo-Echocloud 工时管理系统</description>
+    <description>Echocloud 工时管理系统</description>
     <properties>
         <echocloud.version>1.0.0</echocloud.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
